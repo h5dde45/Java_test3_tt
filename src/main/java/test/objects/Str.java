@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Str {
-    private String s = "";
+    private String s="";
 
     public String addInt(int i) {
         s += i;
@@ -15,10 +15,12 @@ public class Str {
         return s;
     }
 
-    public String cleanerStr() {
-        s = "";
-        return s;
+    public void setS(String s) {
+        this.s = s;
     }
 
-
+    @Override
+    public String toString() {
+        return s;
+    }
 }

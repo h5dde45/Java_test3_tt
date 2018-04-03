@@ -19,10 +19,10 @@ public class StringService {
     private final Lock lock = new ReentrantLock();
     private final Condition countCondition = lock.newCondition();
 
-    public String getStr() {
+    public Str getStr() {
         lock.lock();
         try {
-            return str.getS();
+            return str;
         } finally {
             lock.unlock();
         }
@@ -31,7 +31,7 @@ public class StringService {
     public void depositThread1(int i) {
         lock.lock();
         try {
-            while ((count/10) % 2 == 0) {
+            while ((count / 10) % 2 == 0) {
                 try {
                     countCondition.await();
                 } catch (InterruptedException e) {
@@ -49,7 +49,7 @@ public class StringService {
     public void depositThread2(int i) {
         lock.lock();
         try {
-            while ((count/10) % 2 == 1) {
+            while ((count / 10) % 2 == 1) {
                 try {
                     countCondition.await();
                 } catch (InterruptedException e) {
@@ -64,12 +64,7 @@ public class StringService {
         }
     }
 
-    public int getCount() {
-        lock.lock();
-        try {
-            return count;
-        } finally {
-            lock.unlock();
-        }
+    public void cleanerStr() {
+        str.setS("");
     }
 }
