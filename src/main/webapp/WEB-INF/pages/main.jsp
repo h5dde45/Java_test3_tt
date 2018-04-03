@@ -5,6 +5,8 @@
     <title>Main</title>
 </head>
 <body>
-<p>${count}</p>
+<p>${str}</p>
+<hr>
+<a href="/clean">clean</a>
 </body>
 </html>

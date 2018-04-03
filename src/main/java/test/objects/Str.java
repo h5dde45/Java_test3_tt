@@ -14,4 +14,11 @@ public class Str {
     public String getS() {
         return s;
     }
+
+    public String cleanerStr() {
+        s = "";
+        return s;
+    }
+
+
 }
