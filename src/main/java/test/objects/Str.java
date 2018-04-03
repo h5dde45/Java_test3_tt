@@ -1,7 +1,10 @@
 package test.objects;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Str {
-    private String s;
+    private String s = "";
 
     public String addInt(int i) {
         s += i;
